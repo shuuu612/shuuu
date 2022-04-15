@@ -12,20 +12,32 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com'},
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: ''},
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap'},
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/scss/ress.scss',
+    '@/assets/scss/common.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/storageAvailable.js',
+    '@/plugins/vee-validate',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: [
+      '~/components',
+      '~/components/validation',
+    ]
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -37,12 +49,40 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true,
+  },
+
+  proxy: {
+    '/api/': { target: 'https://inquiry.microcms.io' },
+  },
+
+  styleResources: {
+    scss: [
+      '@/assets/scss/mixin.scss',
+      '@/assets/scss/font.scss',
+      '@/assets/scss/color.scss',
+      '@/assets/scss/object.scss',
+    ]
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    terser: {
+      terserOptions: {
+        compress: {
+          drop_console: process.env.NODE_ENV === "production"
+        }
+      }
+    },
+    transpile: ["vee-validate/dist/rules"],
+  },
+
+  generate: {
+    interval: 300,
+  },
 }
