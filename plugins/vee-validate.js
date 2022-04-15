@@ -7,7 +7,7 @@ extend('required', required)
 extend('email', email)
 extend('max', max)
 
-Vue.component('validation-provider', ValidationProvider)
-Vue.component('validation-observer', ValidationObserver)
+Vue.component('ValidationProvider', ValidationProvider)
+Vue.component('ValidationObserver', ValidationObserver)
 
 localize('ja', ja)

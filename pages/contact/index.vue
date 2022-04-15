@@ -19,32 +19,32 @@
           >
             <FormValidationInput
               rules="required|max:30"
-              labelMessage="お名前"
-              inputType="text"
-              formComponentName="name"
-              maxLength="50"
-              placeHolderMessage="山田太郎"
-              :inputValue.sync="inputName"
+              label-message="お名前"
+              input-type="text"
+              form-component-name="name"
+              max-length="50"
+              place-holder-message="山田太郎"
+              :input-value.sync="inputName"
             >
             </FormValidationInput>
             <FormValidationInput
               rules="required|email|max:256"
-              labelMessage="メールアドレス"
-              inputType="email"
-              formComponentName="email"
-              maxLength="256"
-              placeHolderMessage="contact@example.com"
-              :inputValue.sync="inputEmail"
+              label-message="メールアドレス"
+              input-type="email"
+              form-component-name="email"
+              max-length="256"
+              place-holder-message="contact@example.com"
+              :input-value.sync="inputEmail"
             />
             <FormValidationTextarea
               rules="required|max:1000"
-              labelMessage="お問い合わせ内容"
-              textareaCols="20"
-              textareaRows="10"
-              formComponentName="message"
-              maxLength="1000"
-              placeHolderMessage="お問い合わせ内容をご入力ください"
-              :inputValue.sync="inputMessage"
+              label-message="お問い合わせ内容"
+              textarea-cols="20"
+              textarea-rows="10"
+              form-component-name="message"
+              max-length="1000"
+              place-holder-message="お問い合わせ内容をご入力ください"
+              :input-value.sync="inputMessage"
             >
             </FormValidationTextarea>
             <div class="buttons">
@@ -56,18 +56,18 @@
           <div class="form">
             <FormInputCheck
             rules="required|max:30"
-            labelMessage="お名前"
-            :inputValue="inputName"
+            label-message="お名前"
+            :input-value="inputName"
             />
             <FormInputCheck
             rules="required|email|max:256"
-            labelMessage="メールアドレス"
-            :inputValue="inputEmail"
+            label-message="メールアドレス"
+            :input-value="inputEmail"
             />
             <FormInputCheck
             rules="required|max:1000"
-            labelMessage="お問い合わせ内容"
-            :inputValue="inputMessage"
+            label-message="お問い合わせ内容"
+            :input-value="inputMessage"
             />
             <div class="buttons">
               <button class="button" @click="back">戻る</button>
