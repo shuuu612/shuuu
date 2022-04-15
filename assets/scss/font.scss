@@ -1,0 +1,35 @@
+:root {
+  --font-size-xxs: 10px;
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 15px;
+  --font-size-xl: 16px;
+  --font-size-xxl: 17px;
+  --font-size-3xl: 18px;
+  --font-size-4xl: 20px;
+
+  @include responsive(md) {
+    --font-size-xxs: 10px;
+    --font-size-xs: 12px;
+    --font-size-sm: 13px;
+    --font-size-md: 14px;
+    --font-size-lg: 15px;
+    --font-size-xl: 16px;
+    --font-size-xxl: 18px;
+    --font-size-3xl: 20px;
+    --font-size-4xl: 24px;
+  }
+
+  @include responsive(xl) {
+    --font-size-xxs: 10px;
+    --font-size-xs: 12px;
+    --font-size-sm: 13px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-xxl: 22px;
+    --font-size-3xl: 26px;
+    --font-size-4xl: 30px;
+  }
+}
