@@ -1,9 +1,8 @@
 <template>
   <div class="wrapper">
-    <SimpleHeader />
     <main class="main">
       <div class="contact-form">
-        <h2 class="title">お問い合わせ</h2>
+        <h2 class="title">CONTACT</h2>
         <div class="status-outer">
           <div class="status input" :class="{selected: $route.query.status === undefined}">入力</div>
           <div class="status check" :class="{selected: $route.query.status === 'check'}">確認</div>
@@ -203,8 +202,8 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
-  min-height: 100vh;
-  background-color: var(--gray1);
+  min-height: calc(100vh - 40px);
+  background-color: var(--white);
 }
 
 .contact-form {
@@ -212,7 +211,7 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
+  padding-top: 100px;
 
   --form-size: 800px;
   --label-size: 180px;
@@ -220,8 +219,9 @@ export default {
 
 .title {
   margin-bottom: 40px;
+  color: var(--color2);
   font-weight: 400;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .status-outer {
@@ -237,25 +237,30 @@ export default {
   justify-content: center;
   width: 100px;
   height: 60px;
+  border: 2px var(--color2) solid;
   border-radius: 10px;
   background-color: var(--white);
+  color: var(--color2);
   font-weight: 400;
   font-size: var(--font-size-md);
   &.input {
     &.selected {
-      background-color: var(--colormode2);
+      border: none;
+      background-color: var(--color4);
       color: var(--white);
     }
   }
   &.check {
     &.selected {
-      background-color: var(--colormode2);
+      border: none;
+      background-color: var(--color4);
       color: var(--white);
     }
   }
   &.thanks {
     &.selected {
-      background-color: var(--colormode2);
+      border: none;
+      background-color: var(--color4);
       color: var(--white);
     }
   }
@@ -293,7 +298,6 @@ export default {
 }
 
 .button {
-  /* margin: 20px auto 0; */
   display: block;
   width: 130px;
   height: 60px;

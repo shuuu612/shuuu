@@ -23,16 +23,17 @@ export default {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 40px);
 }
 .link {
   color: var(--gray3);
   text-decoration: none;
+  font-weight: 500;
   font-size: 70px;
   transition: color .2s;
 
   @include hover() {
-    color: var(--colormode4-light);
+    color: var(--color2);
   }
 }
 

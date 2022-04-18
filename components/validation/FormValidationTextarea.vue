@@ -30,58 +30,58 @@ export default {
   props: {
     rules: {
       type: String,
-      required: true
+      required: true,
     },
     labelMessage: {
       type: String,
-      required: true
+      required: true,
     },
     textareaCols: {
       type: String,
-      required: true
+      required: true,
     },
     textareaRows: {
       type: String,
-      required: true
+      required: true,
     },
     formComponentName: {
       type: String,
-      required: true
+      required: true,
     },
     maxLength: {
       type: String,
-      required: true
+      required: true,
     },
     placeHolderMessage: {
       type: String,
-      required: true
+      required: true,
     },
     inputValue: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     inputValueModel: {
       get() {
-        return this.$props.inputValue
+        return this.$props.inputValue;
       },
       set(val) {
-        this.$emit('update:inputValue', val)
-      }
-    }
-  }
-}
+        this.$emit('update:inputValue', val);
+      },
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .container {
-  width: 100%;
-  background-color: var(--white);
-  border-radius: 10px;
   margin-bottom: 10px;
   padding: 16px 0 16px 20px;
+  width: 100%;
   border: 1px var(--gray3) solid;
+  border-radius: 10px;
+  background-color: var(--white);
 }
 
 .input-outer {
@@ -96,30 +96,31 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: var(--label-size);
-  font-size: var(--font-size-md);
-  font-weight: 400;
   margin-top: 10px;
+  width: var(--label-size);
+  font-weight: 400;
+  font-size: var(--font-size-md);
 }
 
 .required {
-  font-size: var(--font-size-xxs);
-  background-color: var(--colormode2);
-  color: var(--white);
-  border-radius: 4px;
-  margin-left: 5px;
   margin-top: 2px;
+  margin-left: 5px;
   padding: 2px 4px 3px 4px;
+  border-radius: 4px;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: var(--font-size-xxs);
 }
 
 .textarea {
+  overflow: auto;
+  padding-right: 30px;
   width: calc(100% - var(--label-size));
   height: 100%;
-  resize: none;
-  overflow: auto;
   font-size: var(--font-size-xl);
-  padding-right: 30px;
   line-height: 2.667em;
+  resize: none;
+
   @include responsive(md) {
     line-height: 2.5em;
   }
@@ -129,10 +130,11 @@ export default {
 }
 
 .attention {
-  padding-left: var(--label-size);
   padding-top: 6px;
+  padding-left: var(--label-size);
   color: var(--red);
-  font-size: var(--font-size-xs);
   font-weight: 400;
+  font-size: var(--font-size-xs);
 }
+
 </style>
