@@ -219,9 +219,9 @@ export default {
 
 .title {
   margin-bottom: 40px;
-  color: var(--color2);
+  color: var(--color4);
   font-weight: 400;
-  font-size: 50px;
+  font-size: 60px;
 }
 
 .status-outer {
@@ -266,8 +266,7 @@ export default {
   }
 }
 
-.input,
-.check {
+.input,.check {
   position: relative;
   margin-right: 60px;
   &::before {
@@ -306,7 +305,7 @@ export default {
   background-color: var(--black);
   color: var(--white);
   font-size: var(--font-size-xl);
-  transition: background-color 0.2s;
+  transition: background-color .2s;
 
   @include hover() {
     background-color: var(--gray10);
@@ -335,4 +334,5 @@ export default {
   font-size: var(--font-size-4xl);
   line-height: 2em;
 }
+
 </style>
