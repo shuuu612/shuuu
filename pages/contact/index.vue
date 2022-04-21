@@ -240,7 +240,7 @@ export default {
   border: 2px var(--color2) solid;
   border-radius: 10px;
   background-color: var(--white);
-  color: var(--color2);
+  color: var(--color4);
   font-weight: 400;
   font-size: var(--font-size-md);
   &.input {

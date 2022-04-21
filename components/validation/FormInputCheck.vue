@@ -70,6 +70,7 @@ export default {
 
 .input {
   width: calc(100% - var(--label-size));
+  color: var(--black);
   font-size: var(--font-size-xl);
   line-height: 2.667em;
 
