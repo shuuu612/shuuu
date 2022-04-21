@@ -153,7 +153,7 @@ export default {
           .post('https://inquiry.microcms.io/api/v1/contact', postData, {
             headers: {
               'Content-Type': 'application/json',
-              'X-MICROCMS-API-KEY': 'a266212255964abb9b0c7285d67907a390f7',
+              'X-MICROCMS-API-KEY': process.env.API_KEY,
             },
           })
           .then((res) => {
@@ -169,7 +169,7 @@ export default {
           .post('/api/v1/contact', postData, {
             headers: {
               'Content-Type': 'application/json',
-              'X-MICROCMS-API-KEY': 'a266212255964abb9b0c7285d67907a390f7',
+              'X-MICROCMS-API-KEY': process.env.API_KEY,
             },
           })
           .then((res) => {
@@ -266,7 +266,8 @@ export default {
   }
 }
 
-.input,.check {
+.input,
+.check {
   position: relative;
   margin-right: 60px;
   &::before {
@@ -305,7 +306,7 @@ export default {
   background-color: var(--black);
   color: var(--white);
   font-size: var(--font-size-xl);
-  transition: background-color .2s;
+  transition: background-color 0.2s;
 
   @include hover() {
     background-color: var(--gray10);
@@ -334,5 +335,4 @@ export default {
   font-size: var(--font-size-4xl);
   line-height: 2em;
 }
-
 </style>
