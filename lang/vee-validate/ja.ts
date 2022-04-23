@@ -9,7 +9,7 @@ export default {
     confirmed: '{_field_}が一致しません',
     digits: '{_field_}は{length}桁の数字でなければなりません',
     dimensions: '{_field_}は幅{width}px、高さ{height}px以内でなければなりません',
-    email: '★メールアドレスのフォーマットに誤りがあります',
+    email: 'メールアドレスのフォーマットに誤りがあります',
     excluded: '{_field_}は不正な値です',
     ext: '{_field_}は有効なファイル形式ではありません',
     image: '{_field_}は有効な画像形式ではありません',
