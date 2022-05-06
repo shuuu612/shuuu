@@ -1,9 +1,5 @@
 <template>
-  <validation-provider
-    v-slot="{ errors }"
-    :rules="rules"
-    :name="labelMessage"
-  >
+  <validation-provider v-slot="{ errors }" :rules="rules" :name="labelMessage">
     <div class="container">
       <div class="input-outer">
         <label class="title" :for="formComponentName">

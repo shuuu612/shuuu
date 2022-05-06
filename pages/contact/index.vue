@@ -4,18 +4,17 @@
       <div class="contact-form">
         <h2 class="title">CONTACT</h2>
         <div class="status-outer">
-          <div class="status input" :class="{selected: $route.query.status === undefined}">入力</div>
-          <div class="status check" :class="{selected: $route.query.status === 'check'}">確認</div>
-          <div class="status thanks" :class="{selected: $route.query.status === 'thanks' || $route.query.status === 'failed'}">完了</div>
+          <div class="status input" :class="{ selected: $route.query.status === undefined }">入力</div>
+          <div class="status check" :class="{ selected: $route.query.status === 'check' }">確認</div>
+          <div
+            class="status thanks"
+            :class="{ selected: $route.query.status === 'thanks' || $route.query.status === 'failed' }"
+          >
+            完了
+          </div>
         </div>
         <div v-if="$route.query.status === undefined" class="form-outer">
-          <validation-observer
-            v-slot="{ invalid }"
-            ref="observer"
-            class="form"
-            tag="form"
-            @submit.prevent="check"
-          >
+          <validation-observer v-slot="{ invalid }" ref="observer" class="form" tag="form" @submit.prevent="check">
             <FormValidationInput
               rules="required|max:30"
               label-message="お名前"
@@ -47,30 +46,25 @@
             >
             </FormValidationTextarea>
             <div class="buttons">
-              <button class="button" type=”submit” :disabled="invalid" :class="{disabled: invalid}">確認</button>
+              <button class="button" type="”submit”" :disabled="invalid" :class="{ disabled: invalid }">確認</button>
             </div>
           </validation-observer>
         </div>
         <div v-else-if="$route.query.status == 'check'" class="form-outer">
           <div class="form">
-            <FormInputCheck
-            rules="required|max:30"
-            label-message="お名前"
-            :input-value="inputName"
-            />
-            <FormInputCheck
-            rules="required|email|max:256"
-            label-message="メールアドレス"
-            :input-value="inputEmail"
-            />
-            <FormInputCheck
-            rules="required|max:1000"
-            label-message="お問い合わせ内容"
-            :input-value="inputMessage"
-            />
+            <FormInputCheck rules="required|max:30" label-message="お名前" :input-value="inputName" />
+            <FormInputCheck rules="required|email|max:256" label-message="メールアドレス" :input-value="inputEmail" />
+            <FormInputCheck rules="required|max:1000" label-message="お問い合わせ内容" :input-value="inputMessage" />
             <div class="buttons">
               <button class="button" @click="back">戻る</button>
-              <button class="button" :disabled="inputName === ''" :class="{disabled: inputName === ''}" @click="submit">送信</button>
+              <button
+                class="button"
+                :disabled="inputName === ''"
+                :class="{ disabled: inputName === '' }"
+                @click="submit"
+              >
+                送信
+              </button>
             </div>
           </div>
         </div>

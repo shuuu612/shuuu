@@ -8,7 +8,6 @@
   --font-size-xxl: 17px;
   --font-size-3xl: 18px;
   --font-size-4xl: 20px;
-
   @include responsive(md) {
     --font-size-xxs: 10px;
     --font-size-xs: 12px;
@@ -20,7 +19,6 @@
     --font-size-3xl: 20px;
     --font-size-4xl: 24px;
   }
-
   @include responsive(xl) {
     --font-size-xxs: 10px;
     --font-size-xs: 12px;
